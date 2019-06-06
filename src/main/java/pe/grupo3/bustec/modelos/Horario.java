@@ -1,6 +1,5 @@
 package pe.grupo3.bustec.modelos;
 
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +15,8 @@ public class Horario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Date tiempo;
+	private String hora;
+	private String tiempo;
 	
 	@JsonIgnore
 	@OneToOne(mappedBy = "horario")
@@ -26,8 +26,9 @@ public class Horario {
 		
 	}
 
-	public Horario(Date tiempo, Viaje viaje) {
+	public Horario(String hora,String tiempo, Viaje viaje) {
 		super();
+		this.hora = hora;
 		this.tiempo = tiempo;
 		this.viaje = viaje;
 	}
@@ -40,11 +41,11 @@ public class Horario {
 		this.id = id;
 	}
 
-	public Date getTiempo() {
+	public String getTiempo() {
 		return tiempo;
 	}
 
-	public void setTiempo(Date tiempo) {
+	public void setTiempo(String tiempo) {
 		this.tiempo = tiempo;
 	}
 
@@ -56,9 +57,19 @@ public class Horario {
 		this.viaje = viaje;
 	}
 
+	public String getHora() {
+		return hora;
+	}
+
+	public void setHora(String hora) {
+		this.hora = hora;
+	}
+
 	@Override
 	public String toString() {
-		return "Horario [id=" + id + ", tiempo=" + tiempo + ", viaje=" + viaje + "]";
+		return "Horario [id=" + id + ", hora=" + hora + ", tiempo=" + tiempo + ", viaje=" + viaje + "]";
 	}
+
+	
 	
 }

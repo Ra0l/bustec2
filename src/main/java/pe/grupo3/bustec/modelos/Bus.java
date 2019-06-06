@@ -14,6 +14,7 @@ public class Bus {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String placa;
+	private String imagen;
 	
 	@JsonIgnore
 	@OneToOne(mappedBy = "bus")
@@ -23,9 +24,10 @@ public class Bus {
 		
 	}
 
-	public Bus(String placa, Viaje viaje) {
+	public Bus(String placa,String imagen, Viaje viaje) {
 		super();
 		this.placa = placa;
+		this.imagen = imagen;
 		this.viaje = viaje;
 	}
 
@@ -53,9 +55,18 @@ public class Bus {
 		this.viaje = viaje;
 	}
 
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
 	@Override
 	public String toString() {
-		return "Bus [id=" + id + ", placa=" + placa + ", viaje=" + viaje + "]";
+		return "Bus [id=" + id + ", placa=" + placa + ", imagen=" + imagen + ", viaje=" + viaje + "]";
 	}
+
 	
 }

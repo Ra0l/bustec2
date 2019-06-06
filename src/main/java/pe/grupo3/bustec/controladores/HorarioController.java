@@ -44,6 +44,7 @@ public class HorarioController {
 		Optional<Horario> horarioEncontrado = horarioRepository.findById(horario_id);
 		
 		Horario horarioActualizado = horarioEncontrado.get();
+		horarioActualizado.setHora(horario.getHora());
 		horarioActualizado.setTiempo(horario.getTiempo());
 		return horarioRepository.save(horarioActualizado);
 	}

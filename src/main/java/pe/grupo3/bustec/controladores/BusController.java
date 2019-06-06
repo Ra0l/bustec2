@@ -44,6 +44,7 @@ public class BusController {
 		Optional<Bus> busEncontrado = busRepository.findById(bus_id);
 		
 		Bus busActualizado=busEncontrado.get();
+		busActualizado.setImagen(bus.getImagen());
 		busActualizado.setPlaca(bus.getPlaca());
 		return busRepository.save(busActualizado);
 	}
