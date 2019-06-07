@@ -31,6 +31,7 @@ public class AlertaController {
 		return alertaRepository.findAll();
 	}
 	
+	
 	@GetMapping(path = "/{id}")
 	public @ResponseBody Optional<Alerta> buscarAlertaPorId(@PathVariable(name="id") Long alerta_id){
 		return alertaRepository.findById(alerta_id);
