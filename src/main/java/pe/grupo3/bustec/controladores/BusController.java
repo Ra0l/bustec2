@@ -23,7 +23,6 @@ import pe.grupo3.bustec.repositories.BusRepository;
 @RestController
 @RequestMapping(value = "/api/buses/")
 public class BusController {
-	
 	@Autowired
 	private BusRepository busRepository;
 	
